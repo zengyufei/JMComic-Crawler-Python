@@ -40,7 +40,7 @@ plugins:
     - plugin: delete_duplicated_files
       kwargs:
         # 对md5出现次数的限制
-        limit: 3
+        limit: ${duplicate_number}
         # 如果文件的md5的出现次数 >= limit，是否要删除
         # 在 limit: 1配置下，效果是删除所有文件 
         delete_if_exceed_limit: true
