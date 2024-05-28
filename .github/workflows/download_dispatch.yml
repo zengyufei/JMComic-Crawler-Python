@@ -68,7 +68,6 @@ jobs:
       ZIP_NAME: ${{ github.event.inputs.ZIP_NAME }}
       UPLOAD_NAME: ${{ github.event.inputs.UPLOAD_NAME }}
       IMAGE_SUFFIX: ${{ github.event.inputs.IMAGE_SUFFIX }}
-      duplicate_number: 2
 
       # 登录相关secrets
       JM_USERNAME: ${{ secrets.JM_USERNAME }}
