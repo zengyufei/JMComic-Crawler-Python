@@ -14,7 +14,7 @@ on:
         required: false
 
       duplicate_number:
-        type: string
+        type: number
         description: 重复次数
         default: '3'
         required: false
@@ -74,6 +74,7 @@ jobs:
       ZIP_NAME: ${{ github.event.inputs.ZIP_NAME }}
       UPLOAD_NAME: ${{ github.event.inputs.UPLOAD_NAME }}
       IMAGE_SUFFIX: ${{ github.event.inputs.IMAGE_SUFFIX }}
+      duplicate_number: ${{ github.event.inputs.duplicate_number }}
 
       # 登录相关secrets
       JM_USERNAME: ${{ secrets.JM_USERNAME }}
@@ -96,14 +97,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-  
-      - name: Convert input to number
-        id: convert-to-number
-        run: echo "::set-output name=number::${{ github.event.inputs.duplicate_number }}"
-        
-      - name: Set environment variable
-        run: |
-          duplicate_number=${{ steps.convert-to-number.outputs.number }}
         
       - name: Install Dependency
         run: |
