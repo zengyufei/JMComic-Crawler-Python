@@ -13,6 +13,12 @@ on:
         description: 章节id（单独下载章节，多个id同上）
         required: false
 
+      duplicate_number:
+        type: number
+        description: 重复次数
+        default: 3
+        required: false
+        
       CLIENT_IMPL:
         type: string
         description: 客户端类型（client.impl），下载失败时，你可以尝试填入此项重试。'api' 表示移动端，'html' 表示网页端。
