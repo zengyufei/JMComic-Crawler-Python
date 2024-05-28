@@ -14,9 +14,9 @@ on:
         required: false
 
       duplicate_number:
-        type: number
+        type: string
         description: 重复次数
-        default: 3
+        default: '3'
         required: false
         
       CLIENT_IMPL:
@@ -74,6 +74,7 @@ jobs:
       ZIP_NAME: ${{ github.event.inputs.ZIP_NAME }}
       UPLOAD_NAME: ${{ github.event.inputs.UPLOAD_NAME }}
       IMAGE_SUFFIX: ${{ github.event.inputs.IMAGE_SUFFIX }}
+      duplicate_number: ${{ github.event.inputs.duplicate_number }}
 
       # 登录相关secrets
       JM_USERNAME: ${{ secrets.JM_USERNAME }}
